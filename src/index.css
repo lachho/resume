@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6;
+  color: #333;
+}
+
+#root {
+  padding: 2rem;
+}
+
+h1, h2, h3 {
+  color: #2c3e50;
+}
+
+.app-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.loading-indicator {
+  text-align: center;
+  padding: 2rem;
+  font-size: 1.2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.report-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 1.5rem;
+  background-color: #fafafa;
+}
+
+.report-card h3 {
+  margin-top: 0;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  color: #2980b9;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 0.5rem;
+}
+
+.file-upload-container {
+    border: 2px dashed #3498db;
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    margin-bottom: 2rem;
+}
+
+.file-upload-container:hover {
+    background-color: #e0e7e9;
+}
+
+.file-upload-container input[type="file"] {
+    display: none;
+} 
