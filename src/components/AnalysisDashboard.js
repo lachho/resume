@@ -156,7 +156,7 @@ const AnalysisDashboard = ({ results }) => {
           <p className="text-gray-600 text-sm">
             Your resume was compared against{' '}
             <a 
-              href="/job-description" 
+              href="#/job-description" 
               className="text-purple-600 hover:text-purple-800 underline font-medium"
               target="_blank"
               rel="noopener noreferrer"
