@@ -177,24 +177,7 @@ export const SOFT_SKILLS = {
   'customer focus': ['customer focus', 'client focus', 'customer service', 'client service', 'customer experience'],
   'service orientation': ['service orientation', 'customer orientation', 'client orientation', 'service delivery', 'customer satisfaction'],
   'relationship building': ['relationship building', 'client relationships', 'stakeholder relationships', 'networking', 'partnership building'],
-  'customer insight': ['customer insight', 'client understanding', 'customer needs', 'client requirements', 'customer analysis'],
-
-  "driven": ["motivated", "self-motivated", "goal-oriented", "ambitious"],
-  "adaptable": ["flexible", "resilient", "open to change", "versatile"],
-  "passionate": ["enthusiastic", "committed", "dedicated", "eager"],
-  "time management": ["organised", "efficient", "prioritisation", "deadline-driven"],
-  "analytical skills": ["critical thinking", "problem analysis", "logical reasoning"],
-  "problem-solving skills": ["troubleshooting", "solution-oriented", "decision making"],
-  "attention to detail": ["meticulous", "accurate", "thorough"],
-  "written communication": ["report writing", "documentation", "technical writing"],
-  "verbal communication": ["presentation", "public speaking", "interpersonal communication"],
-  "presentation skills": ["public speaking", "visual communication", "storytelling"],
-  "proactive": ["self-starter", "initiative", "forward-thinking"],
-  "initiative": ["self-driven", "go-getter", "entrepreneurial"],
-  "collaborative": ["team player", "cooperative", "partnership"],
-  "teamwork": ["group work", "collaboration", "joint effort"],
-  "growth mindset": ["continuous learning", "self-improvement", "adaptability"],
-  "eagerness to learn": ["curious", "inquisitive", "open-minded"]
+  'customer insight': ['customer insight', 'client understanding', 'customer needs', 'client requirements', 'customer analysis']
 };
 
 // Job requirements data structure

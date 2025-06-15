@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { analyseJobRequirements } from '../analysers/jobRequirementsAnalyser';
+import React, { useMemo } from 'react';
 import ATSReport from './ATSReport';
 import ContentQualityReport from './ContentQualityReport';
 import SectionsReport from './SectionsReport';
 import JobRequirementsReport from './JobRequirementsReport';
+import { analyseJobRequirements } from '../analysers/jobRequirementsAnalyser';
 
 const AnalysisDashboard = ({ results }) => {
   // Analyse job requirements when component mounts or results change

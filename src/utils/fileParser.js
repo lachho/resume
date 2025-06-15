@@ -1,8 +1,8 @@
 import * as pdfjsLib from 'pdfjs-dist/build/pdf';
 import mammoth from 'mammoth';
 
-// Set up the PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `/pdf.worker.mjs`;
+// Set up the PDF.js worker - use relative path for GitHub Pages compatibility
+pdfjsLib.GlobalWorkerOptions.workerSrc = `${process.env.PUBLIC_URL || ''}/pdf.worker.mjs`;
 
 /**
  * Parses a file and returns the extracted text and analysis of its structure.

@@ -25,8 +25,6 @@ const ContentQualityReport = ({ data }) => {
     );
   }
 
-  const { score, summary } = data;
-
   // Return multiple individual cards in a React Fragment
   return (
     <>

@@ -45,7 +45,7 @@ export const parseSections = (text) => {
 const extractContactInfo = (text) => {
   const emailRegex = /\b[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}\b/gi;
   const phoneRegex = /\b(?:\+?61|0)[2-47-8](?:[ -]?[0-9]){8}\b/g;
-  const urlRegex = /\b(?<!@)(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+(?:com|org|net|dev|io|app|ai|me|xyz|au|ca|uk|nz)\b(?:[-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
+  const urlRegex = /\b(?<!@)(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+(?:com|org|net|dev|io|app|ai|me|xyz|au|ca|uk|nz)\b(?:[-a-zA-Z0-9()@:%_+.~#?&//=]*)/g;
 
   const emails = [...text.matchAll(emailRegex)].map(match => match[0]);
   const phones = [...text.matchAll(phoneRegex)].map(match => match[0]);

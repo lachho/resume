@@ -8,7 +8,6 @@ import { parseFile } from './utils/fileParser';
 import { analyseResume } from './utils/resumeAnalyser';
 
 function MainPage() {
-  const [resumeText, setResumeText] = useState('');
   const [analysisResults, setAnalysisResults] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
@@ -22,12 +21,10 @@ function MainPage() {
 
     setIsLoading(true);
     setAnalysisResults(null);
-    setResumeText('');
     setError('');
 
     try {
       const parsingResult = await parseFile(file);
-      setResumeText(parsingResult.text);
       const results = await analyseResume(parsingResult);
       setAnalysisResults(results);
     } catch (err) {
@@ -74,7 +71,6 @@ function MainPage() {
                   <button 
                     onClick={() => {
                       setAnalysisResults(null);
-                      setResumeText('');
                     }}
                     className="px-8 py-3 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition-colors"
                   >
