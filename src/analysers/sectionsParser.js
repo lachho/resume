@@ -1,4 +1,3 @@
-// eslint-disable-next-line no-unused-vars
 import { 
   CIVIL_ENGINEERING_SKILLS, 
   SOFT_SKILLS, 

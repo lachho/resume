@@ -148,4 +148,4 @@ npm run build
 
 ---
 
-*Built with React, Tailwind CSS, and modern web technologies. Optimised for Australian English and engineering industry standards.*
+*Built with React, Tailwind CSS, and modern web technologies. Optimised for Australian graduate engineers and engineering industry standards.*
