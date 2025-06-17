@@ -1,6 +1,27 @@
 import { STRONG_ACTION_VERBS, WEAK_ACTION_VERBS } from '../utils/keywords.js';
 
 /**
+ * Helper function to check if a word exists in text using exact word boundaries
+ * @param {string} text - The text to search in
+ * @param {string} word - The word to search for
+ * @returns {boolean} - True if exact word match is found
+ */
+const hasExactWord = (text, word) => {
+  const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+  return regex.test(text);
+};
+
+/**
+ * Helper function to find all exact word matches in text
+ * @param {string} text - The text to search in
+ * @param {Array} words - Array of words to search for
+ * @returns {Array} - Array of words that were found
+ */
+const findExactWords = (text, words) => {
+  return words.filter(word => hasExactWord(text, word));
+};
+
+/**
  * Analyses the content quality of the resume.
  * @param {string} text The resume text.
  * @returns {object} A comprehensive content quality analysis object.
@@ -39,8 +60,6 @@ export const analyseContent = (text) => {
   const numbersPattern = /\b(?!(?:19|20)\d{2}\b)\d+(?:[.,]\d+)?(?:\s*%|percent|percentage|\s*million|\s*billion|\s*thousand|\s*k\b|\s*m\b|\s*bn\b)?/gi;
   
   lines.forEach((line, index) => {
-    const lowerLine = line.toLowerCase();
-    
     // Check for personal pronouns
     const pronounMatches = line.match(personalPronouns);
     if (pronounMatches) {
@@ -51,52 +70,39 @@ export const analyseContent = (text) => {
       });
     }
     
-    // Check for strong action verbs
-    const hasStrongVerb = STRONG_ACTION_VERBS.some(verb => 
-      lowerLine.includes(verb.toLowerCase())
-    );
+    // Check for strong action verbs using exact word matching
+    const foundStrongVerbs = findExactWords(line, STRONG_ACTION_VERBS);
+    const hasStrongVerb = foundStrongVerbs.length > 0;
     
-    // Check for weak action verbs
-    const hasWeakVerb = WEAK_ACTION_VERBS.some(verb => 
-      lowerLine.includes(verb.toLowerCase())
-    );
+    // Check for weak action verbs using exact word matching
+    const foundWeakVerbs = findExactWords(line, WEAK_ACTION_VERBS);
+    const hasWeakVerb = foundWeakVerbs.length > 0;
     
     // Check for quantifiable results (numbers)
     const hasNumbers = numbersPattern.test(line);
     
     if (hasStrongVerb && hasNumbers) {
       // Strong achievement line
-      const strongVerbs = STRONG_ACTION_VERBS.filter(verb => 
-        lowerLine.includes(verb.toLowerCase())
-      );
       const numbers = line.match(numbersPattern) || [];
       
       achievementLines.push({
         line: line.trim(),
-        strongVerbs,
+        strongVerbs: foundStrongVerbs,
         metrics: numbers,
         lineNumber: index + 1
       });
     } else if (hasStrongVerb && !hasNumbers) {
       // Strong verb but no metrics
-      const strongVerbs = STRONG_ACTION_VERBS.filter(verb => 
-        lowerLine.includes(verb.toLowerCase())
-      );
-      
       strongVerbsWithoutMetrics.push({
         line: line.trim(),
-        strongVerbs,
+        strongVerbs: foundStrongVerbs,
         lineNumber: index + 1
       });
     } else if (hasWeakVerb) {
       // Weak action verb line
-      const weakVerbs = WEAK_ACTION_VERBS.filter(verb => 
-        lowerLine.includes(verb.toLowerCase())
-      );
-      
       weakLines.push({
         line: line.trim(),
-        weakVerbs,
+        weakVerbs: foundWeakVerbs,
         lineNumber: index + 1
       });
     }

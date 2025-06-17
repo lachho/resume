@@ -192,7 +192,7 @@ export const JOB_REQUIREMENTS = {
   },
   "hard_skills": {
       "software": [
-          "AutoCAD", "Civil 3D", "Revit", "12d Model", "3D modelling software", "Microsoft Office Suite"
+          "AutoCAD", "Civil 3D", "Revit", "12d Model", "3D modelling software", "Microsoft Office", 'Excel'
       ],
       "engineering_disciplines": [
           "Civil", "Geotechnical", "Structural", "Facade", "Transport Planning", "Roads and Bridges",

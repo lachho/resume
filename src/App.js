@@ -4,6 +4,7 @@ import FileUpload from './components/FileUpload';
 import AnalysisDashboard from './components/AnalysisDashboard';
 import JobDescription from './components/JobDescription';
 import Footer from './components/Footer';
+import ExportButtons from './components/ExportButtons';
 import { parseFile } from './utils/fileParser';
 import { analyseResume } from './utils/resumeAnalyser';
 
@@ -67,6 +68,10 @@ function MainPage() {
           {analysisResults && (
             <div>
               <AnalysisDashboard results={analysisResults} />
+              
+              {/* Export Buttons */}
+              <ExportButtons results={analysisResults} />
+              
               <div className="text-center mt-8">
                   <button 
                     onClick={() => {

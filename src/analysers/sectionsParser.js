@@ -6,6 +6,27 @@ import {
 } from '../utils/keywords.js';
 
 /**
+ * Helper function to check if a word exists in text using exact word boundaries
+ * @param {string} text - The text to search in
+ * @param {string} word - The word to search for
+ * @returns {boolean} - True if exact word match is found
+ */
+const hasExactWord = (text, word) => {
+  const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+  return regex.test(text);
+};
+
+/**
+ * Helper function to find exact word matches in text for skills
+ * @param {string} text - The text to search in
+ * @param {Array} words - Array of words to search for
+ * @returns {Array} - Array of words that were found
+ */
+const findExactSkills = (text, words) => {
+  return words.filter(word => hasExactWord(text, word));
+};
+
+/**
  * Parses resume text to extract key sections and information.
  * @param {string} text The resume text.
  * @returns {object} An object containing extracted sections and analysis.
@@ -68,26 +89,24 @@ const extractSkills = (lowerText, originalText) => {
   const hardSkills = [];
   const softSkills = [];
 
-  // Extract hard skills (civil engineering skills)
+  // Extract hard skills (civil engineering skills) using exact word matching
   Object.entries(CIVIL_ENGINEERING_SKILLS).forEach(([skillCategory, skillVariants]) => {
-    skillVariants.forEach(skill => {
-      if (lowerText.includes(skill.toLowerCase())) {
-        if (!hardSkills.some(existing => existing.toLowerCase() === skillCategory.toLowerCase())) {
-          hardSkills.push(skillCategory);
-        }
+    const foundSkills = findExactSkills(originalText, skillVariants);
+    if (foundSkills.length > 0) {
+      if (!hardSkills.some(existing => existing.toLowerCase() === skillCategory.toLowerCase())) {
+        hardSkills.push(skillCategory);
       }
-    });
+    }
   });
 
-  // Extract soft skills
+  // Extract soft skills using exact word matching
   Object.entries(SOFT_SKILLS).forEach(([skillCategory, skillVariants]) => {
-    skillVariants.forEach(skill => {
-      if (lowerText.includes(skill.toLowerCase())) {
-        if (!softSkills.some(existing => existing.toLowerCase() === skillCategory.toLowerCase())) {
-          softSkills.push(skillCategory);
-        }
+    const foundSkills = findExactSkills(originalText, skillVariants);
+    if (foundSkills.length > 0) {
+      if (!softSkills.some(existing => existing.toLowerCase() === skillCategory.toLowerCase())) {
+        softSkills.push(skillCategory);
       }
-    });
+    }
   });
 
   return { hard: hardSkills, soft: softSkills };
@@ -156,11 +175,9 @@ const extractEducation = (lines, lowerText) => {
   const education = [];
   
   lines.forEach(line => {
-    const lowerLine = line.toLowerCase();
-    
-    // Check if line contains degree keywords
+    // Check if line contains degree keywords using exact word matching
     const hasEducationKeyword = DEGREE_KEYWORDS.some(keyword => 
-      lowerLine.includes(keyword.toLowerCase())
+      hasExactWord(line, keyword)
     );
     
     if (hasEducationKeyword) {
@@ -193,10 +210,10 @@ const identifySections = (lines, lowerText) => {
     certifications: false
   };
   
-  // Check for section headers
+  // Check for section headers using exact word matching
   Object.entries(SECTION_HEADERS).forEach(([sectionType, headers]) => {
     headers.forEach(header => {
-      if (lowerText.includes(header.toLowerCase())) {
+      if (hasExactWord(lowerText, header)) {
         sections[sectionType] = true;
       }
     });
@@ -233,9 +250,9 @@ const generateRecommendations = (text, lowerText, lines) => {
     recommendations.push('Consider adding your LinkedIn profile URL to enhance your professional presence.');
   }
   
-  // Check for skills section
+  // Check for skills section using exact word matching
   const hasSkillsSection = SECTION_HEADERS.skills.some(header => 
-    lowerText.includes(header.toLowerCase())
+    hasExactWord(text, header)
   );
   
   if (!hasSkillsSection) {
@@ -248,9 +265,9 @@ const generateRecommendations = (text, lowerText, lines) => {
     recommendations.push('Consider adding quantified achievements (percentages, numbers, timeframes) to demonstrate impact.');
   }
   
-  // Check for education section
+  // Check for education section using exact word matching
   const hasEducation = DEGREE_KEYWORDS.some(keyword => 
-    lowerText.includes(keyword.toLowerCase())
+    hasExactWord(text, keyword)
   );
   
   if (!hasEducation) {

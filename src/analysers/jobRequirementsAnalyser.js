@@ -1,12 +1,22 @@
 import { JOB_REQUIREMENTS } from '../utils/keywords.js';
 
 /**
+ * Helper function to check if a word exists in text using exact word boundaries
+ * @param {string} text - The text to search in
+ * @param {string} word - The word to search for
+ * @returns {boolean} - True if exact word match is found
+ */
+const hasExactWord = (text, word) => {
+  const regex = new RegExp(`\\b${word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}\\b`, 'i');
+  return regex.test(text);
+};
+
+/**
  * Analyses how well the resume matches job requirements.
  * @param {string} text The resume text.
  * @returns {object} Job requirements analysis with score and breakdown.
  */
 export const analyseJobRequirements = (text) => {
-  const lowerText = text.toLowerCase();
   let score = 0;
   const matches = {
     academics: { found: [], missing: [], score: 0 },
@@ -27,13 +37,13 @@ export const analyseJobRequirements = (text) => {
     }
   };
 
-  // 1. Check Academic Requirements (20% weight)
+  // 1. Check Academic Requirements (20% weight) using exact word matching
   const degreeMatches = [];
   const fieldMatches = [];
   const academicMissing = [];
 
   JOB_REQUIREMENTS.academics.degrees.forEach(degree => {
-    if (lowerText.includes(degree.toLowerCase())) {
+    if (hasExactWord(text, degree)) {
       degreeMatches.push(degree);
     } else {
       academicMissing.push(degree);
@@ -41,7 +51,7 @@ export const analyseJobRequirements = (text) => {
   });
 
   JOB_REQUIREMENTS.academics.fields_of_study.forEach(field => {
-    if (lowerText.includes(field.toLowerCase())) {
+    if (hasExactWord(text, field)) {
       fieldMatches.push(field);
     } else {
       academicMissing.push(field);
@@ -60,13 +70,13 @@ export const analyseJobRequirements = (text) => {
   
   matches.academics = { found: academicMatches, missing: academicMissing, score: academicScore };
 
-  // 2. Check Hard Skills (50% weight) - 20 points per match, up to 100%
+  // 2. Check Hard Skills (50% weight) using exact word matching
   const hardSkillMatches = [];
   const hardSkillMissing = [];
 
   // Check software skills
   JOB_REQUIREMENTS.hard_skills.software.forEach(software => {
-    if (lowerText.includes(software.toLowerCase())) {
+    if (hasExactWord(text, software)) {
       hardSkillMatches.push(software);
     } else {
       hardSkillMissing.push(software);
@@ -75,7 +85,7 @@ export const analyseJobRequirements = (text) => {
 
   // Check engineering disciplines
   JOB_REQUIREMENTS.hard_skills.engineering_disciplines.forEach(discipline => {
-    if (lowerText.includes(discipline.toLowerCase())) {
+    if (hasExactWord(text, discipline)) {
       hardSkillMatches.push(discipline);
     } else {
       hardSkillMissing.push(discipline);
@@ -84,7 +94,7 @@ export const analyseJobRequirements = (text) => {
 
   // Check technical tasks
   JOB_REQUIREMENTS.hard_skills.technical_tasks.forEach(task => {
-    if (lowerText.includes(task.toLowerCase())) {
+    if (hasExactWord(text, task)) {
       hardSkillMatches.push(task);
     } else {
       hardSkillMissing.push(task);
@@ -95,7 +105,7 @@ export const analyseJobRequirements = (text) => {
   const hardSkillScore = Math.min(100, hardSkillMatches.length * 20);
   matches.hardSkills = { found: hardSkillMatches, missing: hardSkillMissing.slice(0, 10), score: hardSkillScore };
 
-  // 3. Check Soft Skills (30% weight) - 20 points per match, up to 100%
+  // 3. Check Soft Skills (30% weight) using exact word matching
   const softSkillMatches = [];
   const softSkillMissing = [];
 
@@ -103,13 +113,13 @@ export const analyseJobRequirements = (text) => {
     const variants = JOB_REQUIREMENTS.soft_matches[skill] || [skill];
     let found = false;
     
-    if (lowerText.includes(skill.toLowerCase())) {
+    if (hasExactWord(text, skill)) {
       softSkillMatches.push(skill);
       found = true;
     } else {
-      // Check variants
+      // Check variants using exact word matching
       variants.forEach(variant => {
-        if (lowerText.includes(variant.toLowerCase())) {
+        if (hasExactWord(text, variant)) {
           softSkillMatches.push(skill);
           found = true;
         }
