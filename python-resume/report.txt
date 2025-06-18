@@ -1,0 +1,84 @@
+🔍 RESUME ANALYSIS REPORT
+==================================================
+Job Target: Civil Engineer - Early Career (COSVEC)
+
+📊 EXECUTIVE SUMMARY
+--------------------
+Overall Assessment: 🟠 Moderate fit (57.0%)
+
+📋 DETAILED ANALYSIS
+--------------------
+1. READABILITY & ATS COMPATIBILITY: 7/10
+   🟡 Good readability with minor ATS compatibility issues
+
+📊 ANALYSIS BREAKDOWN:
+• Word Count: 465 (Good)
+• Career Profile: Appropriate Length
+• Sentence Structure: 2 Long Sentences
+• Bullet Points: 0 (Too Few)
+• Special Characters: Low Ratio (Good)
+• Line Structure: 14 Long Lines
+
+⚠️ ISSUES IDENTIFIED:
+• ⚠️ 2 long sentences - consider bullet points
+• ❌ Few bullet points detected - use more bullets for better readability
+• ❌ Many lines without proper breaks - use more line breaks for readability
+
+💡 RECOMMENDATIONS:
+• Use standard section headers (Experience, Education, Skills)
+• Save as PDF to preserve formatting while maintaining text readability
+
+2. FORMATTING & STRUCTURE: 10.0/10
+   Excellent formatting
+✓ Email address found
+✓ Phone number found
+✓ Found 2 potential degree(s)
+✓ Found 23 key phrase(s)
+✓ Found 10 technical and soft skills
+
+3. CONTENT & ACHIEVEMENT-ORIENTATION: 4.5/10
+   🟠 Content can be improved by using more powerful action verbs and adding quantifiable achievements.
+
+✅ STRONG ACTION VERBS:
+• "developed and executed a streamlined teaching syllabus, significantly enhancing the learning outcomes across 22"
+• "delivered the project within a 1-week timeframe and presented our solution to the client; the team's detailed"
+• "oversee a subcommittee of 63 in organising and executing events, making overarching management and financial"
+
+⚠️ WEAK ACTION VERBS (can be improved):
+• "maintained high morale and resilience during high workload periods and challenging social situations, engaging event"
+• "introduced humanitarian engineering principals to high school girls through an engineering activity which inspired"
+• "a passion for learning about the transport design and project management field demonstrated through participation"
+• "peer assisted study session (pass) leader for engg1811: designed tri-weekly study sessions, fostering students'"
+• "contributed to producing reports for clients that provided asset management recommendations aligned with their"
+
+
+4. JOB MATCH SCORE: 37.1%
+   📊 JOB MATCH BREAKDOWN:
+• Education Match: 100% (Degree: ✓, Field: ✓)
+• Hard Skills Match: 12% (4/32 found)
+• Soft Skills Match: 24% (4/17 found)
+
+🎯 KEYWORDS FROM JOB DESCRIPTION
+-----------------------------------
+Education: Bachelor, Master, Degree, PhD, Civil Engineering, Environmental Engineering, Surveying, Engineering
+Technical Keywords: AutoCAD, Civil 3D, Revit, 12d Model, 3D modelling software, Microsoft Office Suite, Civil, Geotechnical, Structural, Facade, Transport Planning, Roads and Bridges...
+Soft Skill Keywords: leader, driven, adaptable, passionate, time management, analytical skills, problem-solving skills, attention to detail, written communication, verbal communication, presentation skills, proactive, initiative, collaborative, teamwork, growth mindset, eagerness to learn
+
+--- KEY INFORMATION EXTRACTED FROM RESUME ---
+Emails: skim00721@gmail.com
+Phones: 0416249673
+Technical Skills Found (5): project planning, Environmental Engineering, Sustainability, Microsoft Office, infrastructure
+Soft Skills Found (5): Leadership, Collaboration, Passionate, Problem-Solving, Written Communication
+Key Phrases Found (23): High School Tutor, Engineers Australia, Computer Science, Undergraduate Consultant, Uni New College, Environmental Engineering Society, Transport and Highway Engineering, Bachelor of Civil Engineering, Civil and Environmental Engineering Society, Civil and Environmental, Casual Academic, Case Comp, Peer Assisted Study Session, Youth Outreach Program, Transport Design and Project Management, Sue Kim, Lab Demonstrator, Applied Geotechnics, Used Excel-based, Engineers Without Borders, University of New South Wales, Undergraduate Civil Engineer, Civil Engineering
+Potential Education Found (2):
+  • Navigated challenging interpersonal dynamics with diplomacy and professionalism, uniting the team towards shared
+  • Bachelor of Civil Engineering (Honours) / Computer Science
+-----------------------------------
+
+💡 KEY RECOMMENDATIONS
+-------------------------
+• Tailor your skills to the job description, using keywords from the posting.
+• Strengthen descriptions: start each line with an action verb and add numbers to show impact.
+
+==================================================
+Analysis complete. Good luck with your application! 🚀

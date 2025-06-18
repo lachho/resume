@@ -1,0 +1,5 @@
+PyMuPDF==1.23.8  # For PDF parsing
+python-docx==1.0.1  # For DOCX parsing
+spacy==3.7.2  # For basic NLP tasks
+nltk==3.8.1  # For text processing
+typing-extensions==4.9.0  # For enhanced type hints 

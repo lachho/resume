@@ -1,0 +1,42 @@
+JOHN SMITH
+Civil Engineer
+
+Contact Information
+Email: john.smith@email.com
+Phone: (03) 9123 4567
+
+Education
+Bachelor of Civil Engineering
+University of Melbourne, 2023
+Currently completing Master of Structural Engineering
+
+Experience
+Civil Engineering Intern                    Jan 2023 - Present
+COSVEC Engineering Consultants
+
+- Prepared detailed designs for residential subdivisions
+- Conducted technical calculations for foundation design
+- Assisted with AutoCAD drafting and Civil 3D modelling
+- Prepared technical reports for development applications
+- Performed site investigations and soil testing
+- Supported flood modelling and drainage design projects
+
+Engineering Projects
+Stormwater Management System Design          2023
+- Designed WSUD features for residential development
+- Conducted hydrology and hydraulics analysis
+- Used HEC-RAS for flood modelling
+
+Road Design Project                          2022
+- Designed 2km rural road alignment
+- Performed earthworks calculations
+- Created technical specifications and drawings
+
+Skills
+- AutoCAD, Civil 3D, Revit
+- Technical calculations and engineering analysis
+- Flood modelling and traffic modelling
+- Microsoft Office Suite
+- Project planning and cost estimation
+- Technical report writing
+- Site investigation and geotechnical analysis 
